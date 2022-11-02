@@ -31,7 +31,7 @@ jobs:
         
   DeployDev:
     name: deploy on dev envoirment
-    if: github.event.name == 'push'
+    ##if: github.event.name == 'push'
     needs: [build]
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -51,7 +51,7 @@ jobs:
         
   DeployStaging:
     name: deploy on Stage envoirment
-    if: github.event.ref == 'refs/heads/main'
+   ## if: github.event.ref == 'refs/heads/main'
     needs: [build ,DeployDev]
 
     # The type of runner that the job will run on
